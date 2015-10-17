@@ -53,14 +53,22 @@ namespace Przychodnia
         {
             string MyConnectionString = "Server=localhost;Database=mydb1;Uid=root;";
             MySqlConnection con = new MySqlConnection(MyConnectionString);
+            con.Open();
             try
             {
                 MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "SELECT * FROM pacjent;";
-                MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adap.Fill(ds);
-                label.Content = ds.Tables[0].DefaultView.Dispose();
+                cmd.CommandText = "SELECT imie, nazwisko FROM pacjent;";
+                MySqlDataReader reader = cmd.ExecuteReader();
+                
+
+                    StringBuilder sb = new StringBuilder();
+                    while (reader.Read())
+                    {
+                    //sb.Append(reader.GetChar(0).ToString());
+
+                    lbl1.Content += reader.GetString(0) + " " + reader.GetString(1);
+                    }
+                
             }
             catch (Exception)
             {
