@@ -8,9 +8,8 @@
         Title="MainWindow" Height="396" Width="585">
     <Grid>
         <Button x:Name="button" Content="Add record" HorizontalAlignment="Left" Margin="353,48,0,0" VerticalAlignment="Top" Width="117" Height="45" Click="button_Click"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="57,93,0,0" VerticalAlignment="Top" Height="89" Width="161"/>
+        <Label x:Name="lbl1" Content="Label" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" Height="105" Width="557"/>
         <Button x:Name="button1" Content="Select *" HorizontalAlignment="Left" Margin="353,147,0,0" VerticalAlignment="Top" Width="117" Height="35" Click="button1_Click"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="57,237,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
