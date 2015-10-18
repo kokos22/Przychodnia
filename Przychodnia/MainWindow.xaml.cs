@@ -27,7 +27,7 @@ namespace Przychodnia
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void btnDodajPacjenta_Click(object sender, RoutedEventArgs e)
         {
             string MyConnectionString = "Server=localhost;Database=mydb1;Uid=root;";
             MySqlConnection con = new MySqlConnection(MyConnectionString);
@@ -49,7 +49,7 @@ namespace Przychodnia
             con.Close();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void btnSzukajPacjenta_Click(object sender, RoutedEventArgs e)
         {
             string MyConnectionString = "Server=localhost;Database=mydb1;Uid=root;";
             MySqlConnection con = new MySqlConnection(MyConnectionString);

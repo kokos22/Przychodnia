@@ -5,11 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Przychodnia"
         mc:Ignorable="d"
-        Title="MainWindow" Height="396" Width="585">
+        Title="MainWindow" Height="396" Width="685.5">
     <Grid>
-        <Button x:Name="button" Content="Add record" HorizontalAlignment="Left" Margin="353,48,0,0" VerticalAlignment="Top" Width="117" Height="45" Click="button_Click"/>
-        <Label x:Name="lbl1" Content="Label" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" Height="105" Width="557"/>
-        <Button x:Name="button1" Content="Select *" HorizontalAlignment="Left" Margin="353,147,0,0" VerticalAlignment="Top" Width="117" Height="35" Click="button1_Click"/>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="366" VerticalAlignment="Top" Width="678">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="22" Margin="10,36,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="label" Content="ID" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label1" Content="Hasło" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top"/>
+                    <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top" Width="121" Height="19"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="btnDodajPacjenta" Content="Dodaj pacjenta" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Width="112" Height="46" Click="btnDodajPacjenta_Click"/>
+                    <Button x:Name="btnSzukajPacjenta" Content="Szukaj pacjenta" HorizontalAlignment="Left" Margin="127,143,0,0" VerticalAlignment="Top" Width="162" Height="45" Click="btnSzukajPacjenta_Click"/>
+                    <Label x:Name="lbl1" Content="Label" HorizontalAlignment="Left" Margin="10,193,0,0" VerticalAlignment="Top" Height="131" Width="330"/>
+                    <TextBox x:Name="txtImie" HorizontalAlignment="Left" Height="23" Margin="90,13,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="199"/>
+                    <TextBox x:Name="txtNazwisko" HorizontalAlignment="Left" Height="23" Margin="90,41,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="199"/>
+                    <TextBox x:Name="txtAdres" HorizontalAlignment="Left" Height="23" Margin="90,69,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="199"/>
+                    <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="90,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="199"/>
+                    <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" Height="23" Width="149"/>
+                    <Label x:Name="lblAdres" Content="Adres" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Height="23" Width="149"/>
+                    <Label x:Name="lblNazwisko" Content="Nazwisko" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="23" Width="149"/>
+                    <Label x:Name="lblImie" Content="Imię" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Width="149"/>
+                    <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="294,13,0,0" VerticalAlignment="Top" Height="311" Width="364"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>
