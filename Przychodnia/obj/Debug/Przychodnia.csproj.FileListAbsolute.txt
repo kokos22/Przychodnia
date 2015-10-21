@@ -13,3 +13,18 @@ c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia
 c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.exe
 c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.pdb
 C:\Users\Les Cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\bin\Debug\MySql.Data.dll
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\bin\Debug\Przychodnia.exe.config
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.exe
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.pdb
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\bin\Debug\Przychodnia.exe
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\bin\Debug\Przychodnia.pdb
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\bin\Debug\MySql.Data.dll
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.csprojResolveAssemblyReference.cache
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\MainWindow.g.cs
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\App.g.cs
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia_MarkupCompile.cache
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia_MarkupCompile.lref
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\MainWindow.baml
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.g.resources
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.Properties.Resources.resources
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.csproj.GenerateResource.Cache
