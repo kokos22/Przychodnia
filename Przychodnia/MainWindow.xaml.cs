@@ -29,6 +29,7 @@ namespace Przychodnia
 
         private void btnDodajPacjenta_Click(object sender, RoutedEventArgs e)
         {
+            GlobalVars.DodajPacjenta(new Pacjent(GlobalVars.IlePacjentow(), txtImie.Text, txtNazwisko.Text, txtAdres.Text, txtEmail.Text));
             string MyConnectionString = "Server=localhost;Database=mydb1;Uid=root;";
             MySqlConnection con = new MySqlConnection(MyConnectionString);
             MySqlCommand cmd;
@@ -36,9 +37,12 @@ namespace Przychodnia
             try
             {
                 cmd = con.CreateCommand();
-                cmd.CommandText = "insert into pacjent (imie, nazwisko, adres, email) values ('Jan', 'Kowalski', 'Grabowa 7', 'jan@k.pl');";
+                cmd.CommandText = "insert into pacjent (imie, nazwisko, adres, email) values (@imie, @nazwisko, @adres, @email);";
+                cmd.Parameters.AddWithValue("@imie", GlobalVars.ListaPacjentow[GlobalVars.IlePacjentow() - 1].Imie);
+                cmd.Parameters.AddWithValue("@nazwisko", GlobalVars.ListaPacjentow[GlobalVars.IlePacjentow() - 1].Nazwisko);
+                cmd.Parameters.AddWithValue("@adres", GlobalVars.ListaPacjentow[GlobalVars.IlePacjentow() - 1].Adres);
+                cmd.Parameters.AddWithValue("@email", GlobalVars.ListaPacjentow[GlobalVars.IlePacjentow() - 1].Email);
                 cmd.ExecuteNonQuery();
-
             }
             catch (Exception)
             {

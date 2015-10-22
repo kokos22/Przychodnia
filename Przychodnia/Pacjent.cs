@@ -9,12 +9,18 @@ namespace Przychodnia
     class Pacjent
     {
         public int ID { get; private set; }
-        public String Imie { get; private set; }
-        public String Nazwisko { get; private set; }
-        public int Pesel { get; private set; }
-        public String Email { get; private set; }
-        public String Adres { get; private set; }
-        public int Telefon { get; private set; }
-        public int MyProperty { get; private set; }
+        public string Imie { get; private set; }
+        public string Nazwisko { get; private set; }
+        public string Adres { get; private set; }
+        public string Email { get; private set; }
+
+        public Pacjent(int iId, string iImie, string iNazwisko, string iAdres, string iEmail)
+        {
+            this.ID = iId;
+            this.Imie = iImie;
+            this.Nazwisko = iNazwisko;
+            this.Adres = iAdres;
+            this.Email = iEmail;
+        }
     }
 }

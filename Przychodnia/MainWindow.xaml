@@ -25,10 +25,10 @@
                     <TextBox x:Name="txtNazwisko" HorizontalAlignment="Left" Height="23" Margin="90,41,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="199"/>
                     <TextBox x:Name="txtAdres" HorizontalAlignment="Left" Height="23" Margin="90,69,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="199"/>
                     <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="90,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="199"/>
-                    <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" Height="23" Width="149"/>
-                    <Label x:Name="lblAdres" Content="Adres" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Height="23" Width="149"/>
-                    <Label x:Name="lblNazwisko" Content="Nazwisko" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="23" Width="149"/>
-                    <Label x:Name="lblImie" Content="Imię" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Width="149"/>
+                    <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" Height="23" Width="75"/>
+                    <Label x:Name="lblAdres" Content="Adres" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Height="23" Width="75"/>
+                    <Label x:Name="lblNazwisko" Content="Nazwisko" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="23" Width="75"/>
+                    <Label x:Name="lblImie" Content="Imię" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Width="75"/>
                     <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="294,13,0,0" VerticalAlignment="Top" Height="311" Width="364"/>
                 </Grid>
             </TabItem>
