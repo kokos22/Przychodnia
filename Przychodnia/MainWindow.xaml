@@ -19,12 +19,12 @@
             <TabItem Header="TabItem">
                 <Grid Background="#FFE5E5E5">
                     <Button x:Name="btnDodajPacjenta" Content="Dodaj pacjenta" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Width="112" Height="46" Click="btnDodajPacjenta_Click"/>
-                    <Button x:Name="btnSzukajPacjenta" Content="Szukaj pacjenta" HorizontalAlignment="Left" Margin="127,143,0,0" VerticalAlignment="Top" Width="162" Height="45" Click="btnSzukajPacjenta_Click"/>
-                    <Label x:Name="lbl1" Content="Label" HorizontalAlignment="Left" Margin="10,193,0,0" VerticalAlignment="Top" Height="131" Width="330"/>
-                    <TextBox x:Name="txtImie" HorizontalAlignment="Left" Height="23" Margin="90,13,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="199"/>
-                    <TextBox x:Name="txtNazwisko" HorizontalAlignment="Left" Height="23" Margin="90,41,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="199"/>
-                    <TextBox x:Name="txtAdres" HorizontalAlignment="Left" Height="23" Margin="90,69,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="199"/>
-                    <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="90,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="199"/>
+                    <Button x:Name="btnSzukajPacjenta" Content="Szukaj pacjenta" HorizontalAlignment="Left" Margin="127,143,0,0" VerticalAlignment="Top" Width="162" Height="45" Click="btnSzukajPacjenta_Click" IsDefault="True" />
+                    <Label x:Name="lbl1" Content="" HorizontalAlignment="Left" Margin="10,193,0,0" VerticalAlignment="Top" Height="131" Width="279"/>
+                    <TextBox x:Name="txtImie" HorizontalAlignment="Left" Height="23" Margin="90,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="199"/>
+                    <TextBox x:Name="txtNazwisko" HorizontalAlignment="Left" Height="23" Margin="90,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="199"/>
+                    <TextBox x:Name="txtAdres" HorizontalAlignment="Left" Height="23" Margin="90,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="199"/>
+                    <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="90,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="199"/>
                     <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" Height="23" Width="75"/>
                     <Label x:Name="lblAdres" Content="Adres" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Height="23" Width="75"/>
                     <Label x:Name="lblNazwisko" Content="Nazwisko" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="23" Width="75"/>

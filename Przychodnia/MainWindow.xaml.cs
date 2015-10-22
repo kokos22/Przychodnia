@@ -55,22 +55,29 @@ namespace Przychodnia
 
         private void btnSzukajPacjenta_Click(object sender, RoutedEventArgs e)
         {
+            lbl1.Content = "Szukanie...";
             string MyConnectionString = "Server=localhost;Database=mydb1;Uid=root;";
             MySqlConnection con = new MySqlConnection(MyConnectionString);
             con.Open();
             try
             {
                 MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "SELECT imie, nazwisko FROM pacjent;";
+                
+                string where = TworzenieZapytan.StworzSelectaPacjentow(txtImie.Text, txtNazwisko.Text, txtAdres.Text, txtEmail.Text);
+                cmd.CommandText = "SELECT imie, nazwisko, adres, email FROM pacjent " + where + ";";
+                
                 MySqlDataReader reader = cmd.ExecuteReader();
                 
 
                     StringBuilder sb = new StringBuilder();
                     while (reader.Read())
                     {
-                    //sb.Append(reader.GetChar(0).ToString());
 
-                    lbl1.Content += reader.GetString(0) + " " + reader.GetString(1);
+                    lbl1.Content += "\n" + reader.GetString(0) + " " + reader.GetString(1) + "\n" + reader.GetString(2) + " " + reader.GetString(3);
+                    
+                    //w tym miejscu jakieś zrzucanie danych
+                    //do grida czy coś by sie przydało
+
                     }
                 
             }
