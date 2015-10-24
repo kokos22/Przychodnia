@@ -29,34 +29,58 @@ namespace Przychodnia
 
         private void btnDodajPacjenta_Click(object sender, RoutedEventArgs e)
         {
-            AkcjePacjentow.DodajPacjenta(new Pacjent(AkcjePacjentow.IlePacjentow(), txtImie.Text, txtNazwisko.Text, txtAdres.Text, txtEmail.Text));
-            string MyConnectionString = "Server=localhost;Database=mydb1;Uid=root;";
-            MySqlConnection con = new MySqlConnection(MyConnectionString);
-            MySqlCommand cmd;
-            con.Open();
-            try
-            {
-                cmd = con.CreateCommand();
-                cmd.CommandText = "insert into pacjent (imie, nazwisko, adres, email) values (@imie, @nazwisko, @adres, @email);";
-                cmd.Parameters.AddWithValue("@imie", AkcjePacjentow.ListaPacjentow[AkcjePacjentow.IlePacjentow() - 1].Imie);
-                cmd.Parameters.AddWithValue("@nazwisko", AkcjePacjentow.ListaPacjentow[AkcjePacjentow.IlePacjentow() - 1].Nazwisko);
-                cmd.Parameters.AddWithValue("@adres", AkcjePacjentow.ListaPacjentow[AkcjePacjentow.IlePacjentow() - 1].Adres);
-                cmd.Parameters.AddWithValue("@email", AkcjePacjentow.ListaPacjentow[AkcjePacjentow.IlePacjentow() - 1].Email);
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
+            string MessageDodajPacjenta = "Czy chcesz dodać pacjenta o następujących danych: \n" +
+                "Imie: " + txtImie.Text + "\n" +
+                "Nazwisko: " + txtNazwisko.Text + "\n" +
+                "Adres: " + txtAdres.Text + "\n" +
+                "Email: " + txtEmail.Text + "?";
 
-                throw;
+            string MessageDodajTytul = "Dodać pacjenta?";
+
+            MessageBoxButton btnMessageDodaj = MessageBoxButton.OKCancel;
+            MessageBoxImage imgMessageDodaj = MessageBoxImage.Question;
+
+            MessageBoxResult MessageDodajResult = MessageBox.Show(MessageDodajPacjenta, MessageDodajTytul, btnMessageDodaj, imgMessageDodaj);
+
+            if (MessageDodajResult == MessageBoxResult.Yes)
+            {
+                AkcjePacjentow.DodajPacjenta(new Pacjent(AkcjePacjentow.IlePacjentow(), txtImie.Text, txtNazwisko.Text, txtAdres.Text, txtEmail.Text));
+                string MyConnectionString = "Server=localhost;Database=mydb1;Uid=root;";
+                MySqlConnection con = new MySqlConnection(MyConnectionString);
+                MySqlCommand cmd;
+                con.Open();
+                try
+                {
+                    cmd = con.CreateCommand();
+                    cmd.CommandText = "insert into pacjent (imie, nazwisko, adres, email) values (@imie, @nazwisko, @adres, @email);";
+                    cmd.Parameters.AddWithValue("@imie", AkcjePacjentow.ListaPacjentow[AkcjePacjentow.IlePacjentow() - 1].Imie);
+                    cmd.Parameters.AddWithValue("@nazwisko", AkcjePacjentow.ListaPacjentow[AkcjePacjentow.IlePacjentow() - 1].Nazwisko);
+                    cmd.Parameters.AddWithValue("@adres", AkcjePacjentow.ListaPacjentow[AkcjePacjentow.IlePacjentow() - 1].Adres);
+                    cmd.Parameters.AddWithValue("@email", AkcjePacjentow.ListaPacjentow[AkcjePacjentow.IlePacjentow() - 1].Email);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+                con.Close();
             }
-            
-            con.Close();
         }
 
         private void btnSzukajPacjenta_Click(object sender, RoutedEventArgs e)
         {
             lbl1.Content = "Szukanie...";
             TworzenieZapytan.WykonajSelectaPacjentow(TworzenieZapytan.StworzSelectaPacjentow(txtImie.Text, txtNazwisko.Text, txtAdres.Text, txtEmail.Text));
+            string temp = "";
+            if (AkcjePacjentow.IlePacjentow() > 0) { temp = AkcjePacjentow.ListaPacjentow[0].Imie + AkcjePacjentow.ListaPacjentow[0].Nazwisko; }
+            lbl1.Content = temp;
+
+
+            dataGrid.ItemsSource = null; //czyści grida
+            dataGrid.ItemsSource = AkcjePacjentow.ListaPacjentow; //wrzuca pacjentów do czystego grida
+            
         }
 
         private void btnZaloguj_Click(object sender, RoutedEventArgs e)

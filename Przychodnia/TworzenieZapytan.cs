@@ -27,7 +27,7 @@ namespace Przychodnia
             string where = "";
             if(iImie != "")
             {
-                select += " imie = '" + iImie + "'";
+                select += " imie = '" + iImie + " '";
                 jest = true;
             }
             if(iNazwisko != "")
