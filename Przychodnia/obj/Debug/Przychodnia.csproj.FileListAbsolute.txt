@@ -28,3 +28,5 @@ C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\ob
 C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.g.resources
 C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.Properties.Resources.resources
 C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.csproj.GenerateResource.Cache
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\OknoLogowania.g.cs
+C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\OknoLogowania.baml

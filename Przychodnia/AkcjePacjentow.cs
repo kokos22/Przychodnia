@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using MySql.Data;
 
 namespace Przychodnia
 {
@@ -73,6 +75,21 @@ namespace Przychodnia
         public static void WyczyscWybranegoPacjenta()
         {
             PacjentOperacyjny = null;
+        }
+
+        public static void WykonajSelectaPacjentow(string iSelect)
+        {
+            MySqlDataReader wynik = TworzenieZapytan.WykonajSelecta(iSelect);
+
+            AkcjePacjentow.WyczyscListePacjentow();
+
+            while (wynik.Read())
+            {
+                Pacjent p = new Pacjent(AkcjePacjentow.IlePacjentow(), wynik.GetString(0), wynik.GetString(1), wynik.GetString(2), wynik.GetString(3));
+                AkcjePacjentow.DodajPacjenta(p);
+            }
+
+
         }
     }
 }

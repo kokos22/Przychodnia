@@ -25,6 +25,9 @@ namespace Przychodnia
         public MainWindow()
         {
             InitializeComponent();
+
+            var newWindow = new OknoLogowania();
+            newWindow.ShowDialog();
         }
 
         private void btnDodajPacjenta_Click(object sender, RoutedEventArgs e)
@@ -72,7 +75,8 @@ namespace Przychodnia
         private void btnSzukajPacjenta_Click(object sender, RoutedEventArgs e)
         {
             lbl1.Content = "Szukanie...";
-            TworzenieZapytan.WykonajSelectaPacjentow(TworzenieZapytan.StworzSelectaPacjentow(txtImie.Text, txtNazwisko.Text, txtAdres.Text, txtEmail.Text));
+            AkcjePacjentow.WykonajSelectaPacjentow(TworzenieZapytan.StworzSelectaPacjentow(new WhereParams("imie", txtImie.Text), new WhereParams("nazwisko", txtNazwisko.Text), new WhereParams("adres", txtAdres.Text), new WhereParams("email", txtEmail.Text)));
+           
             string temp = "";
             if (AkcjePacjentow.IlePacjentow() > 0) { temp = AkcjePacjentow.ListaPacjentow[0].Imie + AkcjePacjentow.ListaPacjentow[0].Nazwisko; }
             lbl1.Content = temp;
@@ -85,7 +89,13 @@ namespace Przychodnia
 
         private void btnZaloguj_Click(object sender, RoutedEventArgs e)
         {
-            Uzytkownik.SprawdzHaslo(txtNazwaUzytkownika.Text, txtHaslo.Password);
+            //Uzytkownik.SprawdzHaslo(txtNazwaUzytkownika.Text, txtHaslo.Password);
+        }
+
+        private void btnWyloguj_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new OknoLogowania();
+            newWindow.ShowDialog();
         }
 
         //jakoś tak:

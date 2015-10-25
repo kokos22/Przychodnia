@@ -20,45 +20,22 @@ namespace Przychodnia
         /// <param name="iAdres"></param>
         /// <param name="iEmail"></param>
         /// <returns></returns>
-        public static string StworzSelectaPacjentow(string iImie, string iNazwisko, string iAdres, string iEmail)
+        public static string StworzSelectaPacjentow(params WhereParams[] iParamsList)
         {
             bool jest = false;
             string select = "";
             string where = "";
-            if(iImie != "")
-            {
-                select += " imie = '" + iImie + " '";
-                jest = true;
-            }
-            if(iNazwisko != "")
-            {
-                if (jest)
-                {
-                    select += " and";
-                }
-                select += " nazwisko = '" + iNazwisko + "'";
-                jest = true;
-            }
-            if(iAdres != "")
-            {
-                if(jest)
-                {
-                    select += " and";
-                }
-                select += " adres = '" + iAdres + "'";
-                jest = true;
-            }
 
-            if(iEmail != "")
+            for (int i = 0; i < iParamsList.Length; i++)
             {
-                if(jest)
+                if(iParamsList[i].GetParams() != "")
                 {
-                    select += " and";
+                    if (jest) { select += " and"; }
+                    select += iParamsList[i].GetParams();
+                    jest = true;
                 }
-                select += " email = '" + iEmail + "'";
-                jest = true;
             }
-
+            
             if (jest) { where = " where" + select; }
 
             return "SELECT imie, nazwisko, adres, email FROM pacjent " + where + ";";
@@ -66,12 +43,13 @@ namespace Przychodnia
 
 
         /// <summary>
-        /// Wrzuca do globalnej listy pacjentów wyszukanych iSelectem
+        /// Wykonuje iSelecta na bazie, zwraca MySqlDataReader z wynikami
         /// </summary>
         /// <param name="iSelect"></param>
-        public static void WykonajSelectaPacjentow(string iSelect)
+        public static MySqlDataReader WykonajSelecta(string iSelect)
         {
-            AkcjePacjentow.WyczyscListePacjentow();
+            MySqlDataReader readerToReturn;
+
             string MyConnectionString = "Server=localhost;Database=mydb1;Uid=root;";
             MySqlConnection con = new MySqlConnection(MyConnectionString);
             con.Open();
@@ -79,33 +57,22 @@ namespace Przychodnia
             try
             {
                 MySqlCommand cmd = con.CreateCommand();
-
                 cmd.CommandText = iSelect;
-
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-
-                StringBuilder sb = new StringBuilder();
-                while (reader.Read())
-                {
-                    //Dodaje pacjentów do globalnej listy pacjentów, z której można potem
-                    //wybrać jednego pacjenta
-                    Pacjent p = new Pacjent(AkcjePacjentow.IlePacjentow(), reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
-                    AkcjePacjentow.DodajPacjenta(p);
-                }
-
+                readerToReturn = cmd.ExecuteReader();
             }
             catch (Exception)
             {
                 throw;
             }
             finally
-            {
+            {/*
                 if (con.State == ConnectionState.Open)
                 {
                     con.Close();
-                }
+                }*/
             }
+            //no i chuj, żeby zamknąć połączenie trzeba tutaj wjebać delegata
+            return readerToReturn;
         }
 
         /// <summary>
