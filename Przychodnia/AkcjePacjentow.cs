@@ -8,6 +8,9 @@ using MySql.Data;
 
 namespace Przychodnia
 {
+    /// <summary>
+    ///  wow
+    /// </summary>
     static class AkcjePacjentow
     {
         static AkcjePacjentow()

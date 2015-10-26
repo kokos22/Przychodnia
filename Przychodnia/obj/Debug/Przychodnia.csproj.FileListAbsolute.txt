@@ -32,3 +32,6 @@ C:\Users\Les Cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia
 C:\Users\Les Cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\OknoLogowania.g.cs
 C:\Users\Les Cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\MainWindow.baml
 C:\Users\Les Cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\OknoLogowania.baml
+E:\Proj\Przychodnia\Przychodnia\bin\Debug\Przychodnia.exe.config
+E:\Proj\Przychodnia\Przychodnia\obj\Debug\Przychodnia.exe
+E:\Proj\Przychodnia\Przychodnia\obj\Debug\Przychodnia.pdb
