@@ -77,9 +77,9 @@ namespace Przychodnia
             PacjentOperacyjny = null;
         }
 
-        public static void WykonajSelectaPacjentow(string iSelect)
+        public static void OgarnijDanePacjentow(MySqlDataReader wynik)
         {
-            MySqlDataReader wynik = TworzenieZapytan.WykonajSelecta(iSelect);
+            //MySqlDataReader wynik = TworzenieZapytan.WykonajSelecta(iSelect);
 
             AkcjePacjentow.WyczyscListePacjentow();
 

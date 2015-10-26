@@ -2,11 +2,9 @@ c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia
 c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\bin\Debug\Przychodnia.exe
 c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\bin\Debug\Przychodnia.pdb
 c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.csprojResolveAssemblyReference.cache
-c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\MainWindow.g.cs
 c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\App.g.cs
 c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia_MarkupCompile.cache
 c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia_MarkupCompile.lref
-c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\MainWindow.baml
 c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.g.resources
 c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.Properties.Resources.resources
 c:\users\les cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.csproj.GenerateResource.Cache
@@ -30,3 +28,7 @@ C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\ob
 C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\Przychodnia.csproj.GenerateResource.Cache
 C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\OknoLogowania.g.cs
 C:\Users\QWERTY\Documents\Visual Studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\OknoLogowania.baml
+C:\Users\Les Cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\MainWindow.g.cs
+C:\Users\Les Cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\OknoLogowania.g.cs
+C:\Users\Les Cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\MainWindow.baml
+C:\Users\Les Cabos\documents\visual studio 2015\Projects\Przychodnia\Przychodnia\obj\Debug\OknoLogowania.baml

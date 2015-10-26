@@ -10,7 +10,7 @@
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="366" VerticalAlignment="Top" Width="688" Margin="0,0,-10,0">
             <TabItem Header="Logowanie">
                 <Grid Background="#FFE5E5E5" FocusManager.FocusedElement="{Binding ElementName = txtNazwaUzytkownika}">
-                    <Button x:Name="btnWyloguj" Content="Wyloguj" HorizontalAlignment="Left" Margin="112,81,0,0" VerticalAlignment="Top" Width="75" Click="btnWyloguj_Click"/>
+                    <Button x:Name="btnWyloguj" Content="Wyloguj" HorizontalAlignment="Left" Margin="132,145,0,0" VerticalAlignment="Top" Width="75" Click="btnWyloguj_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Pacjenci" KeyboardNavigation.IsTabStop="False">

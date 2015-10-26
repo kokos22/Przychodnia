@@ -10,17 +10,16 @@ namespace Przychodnia
 {
     static class TworzenieZapytan
     {
+        public delegate void ZarzadzajDanymiZselecta(MySqlDataReader dr);
         //static TworzenieZapytan() { };
 
         /// <summary>
-        /// Zwykłe tworzenie selecta pacjentów, zwraca całego selecta
+        /// Uniwersalne tworzenie SELECTÓw
         /// </summary>
-        /// <param name="iImie"></param>
-        /// <param name="iNazwisko"></param>
-        /// <param name="iAdres"></param>
-        /// <param name="iEmail"></param>
-        /// <returns></returns>
-        public static string StworzSelectaPacjentow(params WhereParams[] iParamsList)
+        /// <param name="iSelectColumns">[0]: nazwa tabeli, [1..n]: nazwy kolumn</param>
+        /// <param name="iParamsList">WhereParams(Nazwa_kolumny, wartość_kolumny)</param>
+        /// <returns>Cały gotowy select</returns>
+        public static string StworzSelecta(string[] iSelectColumns, params WhereParams[] iParamsList)
         {
             bool jest = false;
             string select = "";
@@ -37,18 +36,33 @@ namespace Przychodnia
             }
             
             if (jest) { where = " where" + select; }
+            /*
+            iSelectList:
+            0: FROM [table name]
+            1...n: columns
+            */
 
-            return "SELECT imie, nazwisko, adres, email FROM pacjent " + where + ";";
+            string columnNames = "";
+            for (int i = 1; i < iSelectColumns.Length; i++)
+            {
+                if (i == 1)
+                    columnNames += " " + iSelectColumns[i];
+                else
+                    columnNames += ", " + iSelectColumns[i];
+            }
+
+            return "SELECT " + columnNames + " FROM " + iSelectColumns[0] + " " + where + ";";
         }
 
 
         /// <summary>
         /// Wykonuje iSelecta na bazie, zwraca MySqlDataReader z wynikami
         /// </summary>
-        /// <param name="iSelect"></param>
-        public static MySqlDataReader WykonajSelecta(string iSelect)
+        /// <param name="iSelect">string z SELECTEM</param>
+        /// <param name="iGetReaderData">Funkcja(MySqlDataReader), ogarniająca dane</param>
+        public static void WykonajSelecta(string iSelect, Action<MySqlDataReader> iGetReaderData)
         {
-            MySqlDataReader readerToReturn;
+            //MySqlDataReader readerToReturn;
 
             string MyConnectionString = "Server=localhost;Database=mydb1;Uid=root;";
             MySqlConnection con = new MySqlConnection(MyConnectionString);
@@ -58,25 +72,29 @@ namespace Przychodnia
             {
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = iSelect;
-                readerToReturn = cmd.ExecuteReader();
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                //Delegata, który ogarnie dane
+
+                iGetReaderData(reader);
             }
             catch (Exception)
             {
                 throw;
             }
             finally
-            {/*
+            {
                 if (con.State == ConnectionState.Open)
                 {
                     con.Close();
-                }*/
+                }
             }
             //no i chuj, żeby zamknąć połączenie trzeba tutaj wjebać delegata
-            return readerToReturn;
+            //return readerToReturn;
         }
 
         /// <summary>
-        /// Tworzy selecta loginu
+        /// To trzeba podpiąć pod StworzSelecta()
         /// </summary>
         /// <param name="iLogin"></param>
         /// <returns></returns>

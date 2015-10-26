@@ -45,7 +45,7 @@ namespace Przychodnia
 
             MessageBoxResult MessageDodajResult = MessageBox.Show(MessageDodajPacjenta, MessageDodajTytul, btnMessageDodaj, imgMessageDodaj);
 
-            if (MessageDodajResult == MessageBoxResult.Yes)
+            if (MessageDodajResult == MessageBoxResult.OK)
             {
                 AkcjePacjentow.DodajPacjenta(new Pacjent(AkcjePacjentow.IlePacjentow(), txtImie.Text, txtNazwisko.Text, txtAdres.Text, txtEmail.Text));
                 string MyConnectionString = "Server=localhost;Database=mydb1;Uid=root;";
@@ -75,8 +75,12 @@ namespace Przychodnia
         private void btnSzukajPacjenta_Click(object sender, RoutedEventArgs e)
         {
             lbl1.Content = "Szukanie...";
-            AkcjePacjentow.WykonajSelectaPacjentow(TworzenieZapytan.StworzSelectaPacjentow(new WhereParams("imie", txtImie.Text), new WhereParams("nazwisko", txtNazwisko.Text), new WhereParams("adres", txtAdres.Text), new WhereParams("email", txtEmail.Text)));
+            string[] columnNames = { "pacjent", "imie", "nazwisko", "adres", "email" };
+            
+            TworzenieZapytan.WykonajSelecta(TworzenieZapytan.StworzSelecta(columnNames , new WhereParams("imie", txtImie.Text), new WhereParams("nazwisko", txtNazwisko.Text), new WhereParams("adres", txtAdres.Text), new WhereParams("email", txtEmail.Text)), AkcjePacjentow.OgarnijDanePacjentow);
            
+            
+            //NIEWAŻNE, można wyjebać
             string temp = "";
             if (AkcjePacjentow.IlePacjentow() > 0) { temp = AkcjePacjentow.ListaPacjentow[0].Imie + AkcjePacjentow.ListaPacjentow[0].Nazwisko; }
             lbl1.Content = temp;
@@ -87,28 +91,10 @@ namespace Przychodnia
             
         }
 
-        private void btnZaloguj_Click(object sender, RoutedEventArgs e)
-        {
-            //Uzytkownik.SprawdzHaslo(txtNazwaUzytkownika.Text, txtHaslo.Password);
-        }
-
         private void btnWyloguj_Click(object sender, RoutedEventArgs e)
         {
             var newWindow = new OknoLogowania();
             newWindow.ShowDialog();
         }
-
-        //jakoś tak:
-        /*
-        tabControl1.Selecting += new TabControlCancelEventHandler(tabControl1_Selecting);
-
-        void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
-        {
-            TabPage current = (sender as TabControl).SelectedTab;
-            //validate the current page, to cancel the select use:
-            e.Cancel = true;
-        }
-        */
-
     }
 }
